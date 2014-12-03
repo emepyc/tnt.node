@@ -147,19 +147,19 @@ describe ('TnT node', function () {
 	
 	describe('find_node', function () {
 	    var tree_from_newick = tnt_node(newick.parse_newick("((human,chimp)anc1,mouse)anc2"));
-	    var tree_from_json   = tnt_node(_t.tree);
 
 	    it ("Finds a node by name", function () {
 		assert.isDefined (tree_from_newick);
 		assert.typeOf (tree_from_newick, 'function');
 
-		var human_node = newick.find_node (function (node) {
+		var human_node = tree_from_newick.find_node (function (node) {
 		    return (node.node_name() === 'human');
 		});
 		assert.isDefined (human_node);
 		assert.strictEqual(human_node.node_name(), 'human');
 	    });
 
+	    var tree_from_json   = tnt_node(_t.tree);
 	    it ("Finds a node by a deep attribute", function () {
 		assert.isDefined (tree_from_json);
 		assert.typeOf (tree_from_json, 'function');
@@ -448,7 +448,7 @@ describe ('TnT node', function () {
 
 	    it("Sorts based on a numerical value", function () {
 		var newick_str = "(((4,2),(5,1)),3)";
-		var data = newick.parse_newick(newick);
+		var data = newick.parse_newick(newick_str);
 		var tree = tnt_node(data);
 		var ids = [];
 		tree.apply(function (node) {
