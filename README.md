@@ -5,3 +5,5 @@
 tnt.node
 =========
 
+Tree manipulation methods for TnT
+
