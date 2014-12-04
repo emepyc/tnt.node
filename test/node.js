@@ -1,5 +1,5 @@
-var newick = require ("../../tnt.newick/src/newick.js");
-var tnt_node = require("../src/node.js").tnt_node;
+var newick = require ("../../tnt.newick/index.js");
+var tnt_node = require("../index.js");
 var assert = require("chai").assert;
 var _ = require("underscore");
 

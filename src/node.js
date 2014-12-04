@@ -1,4 +1,4 @@
-var apijs = require("../../tnt.api/src/api.js").api;
+var apijs = require("../../tnt.api/index.js");
 var iterator = require("../../tnt.utils/index.js").utils.iterator;
 
 var tnt_node = function (data) {
@@ -448,5 +448,5 @@ var tnt_node = function (data) {
 
 };
 
-module.exports.tnt_node = tnt_node;
+module.exports = exports = tnt_node;
 
