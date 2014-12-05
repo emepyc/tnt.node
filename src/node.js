@@ -1,5 +1,5 @@
 var apijs = require("../../tnt.api/index.js");
-var iterator = require("../../tnt.utils/index.js").utils.iterator;
+var iterator = require("../../tnt.utils/index.js").iterator;
 
 var tnt_node = function (data) {
 //tnt.tree.node = function (data) {
